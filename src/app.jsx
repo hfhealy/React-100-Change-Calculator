@@ -55,9 +55,9 @@ class App extends Component {
   <h1>Change Calculator</h1>
   <hr/>
   <div className="container">
-    <div className="row">
-      <div className="col-sm-4">
-        <div className="card" id="card">
+    <div className="row row-cols-1 row-cols-md-2">
+      <div className="col-md-4">
+        <div className="card mt-1" id="card">
           <div className="card-header">Enter Information</div>
           <div className="card-body">
             <label className="form-label">How much is Due?</label>
@@ -70,45 +70,70 @@ class App extends Component {
           </div>
         </div>
       </div>
-      <div className="col-sm-8" id="output-box">
+      <div className="col-md-8" id="output-box">
+      <div className="card text-center mt-1 mb-2">
+      <div className="card-body">
       {
         this.state.output > 0 ? <div className="alert alert-success" name="output" id="output" onClick={this.button}>{`The total change due is $${this.state.output}`}</div> : this.state.output < 0 ? <div className="alert alert-danger" name="output" id="output"> {`More money needed`} </div> : this.state.output == false ? <div></div> : <div></div>
       }
-        <div id="box-border">
-        <div className="row" id="change-headers">
-            <div className="col-sm"><strong>Twenties</strong></div>
-            <div className="col-sm"><strong>Tens</strong></div>
-            <div className="col-sm"><strong>Fives</strong></div>
-            <div className="col-sm"><strong>Ones</strong></div>
+        <div className="row mb-2">
+        <div className="col-sm-3">
+        <div className="card mb-1">
+            <label className="fw-bold mt-1 mb-1">Twenties</label>
+            <p className="change" onClick={this.button}>{this.state.twenties}</p>
         </div>
-        <br/>
+        </div>
+        <div className="col-sm-3">
+        <div className="card mb-1">
+          <label className="fw-bold mt-1 mb-1">Tens</label>
+            <p className="change" onClick={this.button}>{this.state.tens}</p>
+        </div>
+        </div>
+        <div className="col-sm-3">
+        <div className="card mb-1">
+            <label className="fw-bold mt-1 mb-1">Fives</label>
+            <p className="change" onClick={this.button}>{this.state.fives}</p>
+        </div>
+        </div>
+        <div className="col-sm-3">
+        <div className="card mb-1">
+            <label className="fw-bold mt-1 mb-1">Ones</label>
+            <p className="change" onClick={this.button}>{this.state.ones}</p>
+        </div>
+        </div>
+        </div>
         <div className="row">
-          <p className="change col-sm" onClick={this.button}>{this.state.twenties}</p>
-          <p className="change col-sm" onClick={this.button}>{this.state.tens}</p>
-          <p className="change col-sm" onClick={this.button}>{this.state.fives}</p>
-          <p className="change col-sm" onClick={this.button}>{this.state.ones}</p>
+        <div className="col-sm-3">
+        <div className="card mb-1">
+            <label className="fw-bold mt-1 mb-1">Quarters</label>
+            <p className="change" onClick={this.button}>{this.state.quarters}</p>
         </div>
         </div>
-        <br/>
-        <div id="box-border">
-        <div className="row" id="change-headers">
-          <div className="col-sm"><strong>Quarters</strong></div>
-          <div className="col-sm"><strong>Dimes</strong></div>
-          <div className="col-sm"><strong>Nickels</strong></div>
-          <div className="col-sm"><strong>Pennies</strong></div>
-        </div>
-        <br/> 
-        <div className="row">
-          <p className="change col-sm" onClick={this.button}>{this.state.quarters}</p>
-          <p className="change col-sm" onClick={this.button}>{this.state.dimes}</p>
-          <p className="change col-sm" onClick={this.button}>{this.state.nickels}</p>
-          <p className="change col-sm" onClick={this.button}>{this.state.pennies}</p>
+        <div className="col-sm-3">
+        <div className="card mb-1">
+          <label className="fw-bold mt-1 mb-1">Dimes</label>
+            <p className="change" onClick={this.button}>{this.state.dimes}</p>
         </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+        <div className="col-sm-3">
+        <div className="card mb-1">
+            <label className="fw-bold mt-1 mb-1">Nickels</label>
+            <p className="change" onClick={this.button}>{this.state.nickels}</p>
+        </div>
+        </div>
+        <div className="col-sm-3">
+        <div className="card">
+            <label className="fw-bold mt-1 mb-1">Pennies</label>
+            <p className="change" onClick={this.button}>{this.state.pennies}</p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+ </div>
+ </div>
+ </div>
+ </div>
     )
   }
 }
